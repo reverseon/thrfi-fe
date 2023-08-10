@@ -1,0 +1,25 @@
+// Palette
+// -------------------------
+$color-yellow: #ffbe08;
+$color-dark-yellow: #ffbe08;
+$color-orange: #ff6721;
+$color-red: #ff006e;
+$color-contrast-red: #ff6868;
+$color-purple: #8338ec;
+$color-green: #00c9a7;
+$color-blue: #3a86ff;
+$color-bg-dark: #000000;
+$color-dark-white: #D9DCDE;
+$color-highlight-white: #ffffff;
+
+@mixin flex-vertical-center {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+$default-x-padding: 2rem;
+$mobile-x-padding: 1.2rem;
+$mobile-view-width: 1106px;
+$mobile-2-view-width: 768px;

@@ -1,0 +1,176 @@
+@import '_variable.scss';
+
+.header {
+    position: sticky;
+    width: 100vw;
+    max-width: 100%;
+    height: fit-content;
+    top: 0;
+    left: 0;
+    z-index: 11;
+    background-color: $color-bg-dark;
+    border-bottom: 1px solid #4f4f4f;
+}
+.header ul {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.8rem $default-x-padding;
+    .navbar-link {
+        flex-grow: 1;
+        padding-left: 6.5rem;
+        display: flex;
+        flex-direction: row;
+        gap: 2.5rem;
+        font-size: 0.9rem;
+        justify-content: flex-start;
+        li {
+            font-weight: 500;
+            display: inline-block;
+            a {
+                text-transform: uppercase;
+                color: $color-highlight-white;
+                transition: all 0.3s ease-in-out;
+                &:hover {
+                    color: $color-yellow;
+                }
+            }
+        }
+        @media screen and (max-width: $mobile-view-width) {
+            display: none;
+        }
+    }
+    @media screen and (max-width: $mobile-view-width) {
+        padding: 0.8rem $mobile-x-padding;
+    }
+}
+
+.navbar-link-mobile {
+    display: none;
+    z-index: 10;
+    @media screen and (max-width: $mobile-view-width) {
+        position: fixed;
+        display: block;
+        background-color: $color-bg-dark;
+        height: 0;
+        width: 100vw;
+        max-width: 100%;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        transition: all 0.3s ease-in-out;
+        .nv-ctr {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            font-size: 1rem;
+            padding: 0 0;
+            padding-top: calc(5rem);
+            padding-bottom: 2rem;
+            color: $color-highlight-white;
+            hr {
+                width: 100%;
+                border: 0.5px solid grey;
+                margin: 0.8rem 0;
+            }
+            li {
+                padding-left: $mobile-x-padding;
+                font-weight: 500;
+                display: inline-block;
+                a {
+                    padding: 0;
+                    margin: 0;
+                    transition: all 0.3s ease-in-out;
+                    &:hover {
+                        color: $color-yellow;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.title {
+    @include flex-vertical-center;
+    color: $color-highlight-white;
+    width: fit-content;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.brand-icon {
+    margin-right: 0.6rem;  
+}
+
+.li-visit-button-mbl {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.visit-button, .visit-button-mbl {
+    background-color: $color-yellow;
+    border: 2px solid $color-yellow;
+    color: $color-bg-dark;
+    padding: 0.6rem $mobile-x-padding;
+    font-size: 0.85rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        background-color: transparent;
+        color: $color-highlight-white;
+    }
+}
+.visit-button {
+    @include flex-vertical-center;
+    @media screen and (max-width: $mobile-view-width) {
+        display: none;
+    } 
+}
+
+.visit-button-mbl {
+    display: none; 
+    @media screen and (max-width: $mobile-view-width) {
+        @include flex-vertical-center;
+    }
+    align-self: center;
+}
+
+#toggle {
+    display: none;
+    @media screen and (max-width: $mobile-view-width) {
+        z-index: -1;
+        &:checked ~ {
+            .header .navbar-toggle .navbar-hamburger {
+                span:nth-child(1) {
+                    transform: rotate(-45deg) translate(-8px, 7px);
+                }
+                span:nth-child(2) {
+                    opacity: 0;
+                }
+                span:nth-child(3) {
+                    transform: rotate(45deg) translate(-8px, -7px);
+                }
+            }
+            .navbar-link-mobile {
+                height: calc(var(--vh, 1vh) * 100);
+            }
+        }
+    }
+}
+.navbar-toggle {
+    display: none;
+    @media screen and (max-width: $mobile-view-width) {
+        display: block;
+        .navbar-hamburger {
+            span {
+                display: block;
+                width: 2rem;
+                height: 0.15rem;
+                background-color: $color-highlight-white;
+                margin: 0.5rem;
+                transition: all 0.3s ease-in-out;
+            }
+        }
+    }
+}

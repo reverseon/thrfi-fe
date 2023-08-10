@@ -1,0 +1,89 @@
+@import '_variable.scss';
+.go-to {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+    padding: 2rem;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h5 {
+        margin-bottom: 2rem;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 600px;
+        input[type=text], input[type=email], input[type=number], input[type=password]
+        {
+            width: 100%;
+            padding: 1rem 1rem;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            &:focus {
+                outline: none;
+                border-color: $color-yellow;
+            }
+        }
+        button {
+            @include flex-vertical-center;
+            background: $color-yellow;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            color: black;
+            height: 3rem;
+            cursor: pointer;
+            justify-content: center;
+            transition: all 0.3s ease-in-out;
+            border: 2px solid $color-yellow;
+            &:hover {
+                background: transparent;
+                color: $color-yellow;
+            }
+            &:disabled {
+                filter: grayscale(1);
+                cursor: not-allowed;
+            }
+            &:disabled:hover {
+                background: $color-yellow;
+            }
+            svg {
+                margin-right: 0.5rem;
+            }
+        }
+        .alert {
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            &.success {
+                background: $color-green;
+                color: #fff;
+            }
+            &.error {
+                background: $color-contrast-red;
+                color: #fff;
+                p {
+                    @include flex-vertical-center;
+                    svg {
+                        margin-right: 0.5rem;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+@import './variable.scss';
+
+.hiw-credits {
+    margin-top: 3rem;
+    display: flex;
+    gap: 20px;
+    .hiw, .credits {
+        border-radius: 1rem;
+        padding: 2rem;
+        text-align: justify;
+        font-weight: 500;
+        color: black;
+        a {
+            text-decoration: underline;
+        }
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+    }
+    .hiw {
+        background-color: $color-yellow;
+    }
+    .credits {
+        background-color: $color-highlight-white;
+    }
+    @media screen and (max-width: 900px) {
+        flex-direction: column;
+        .hiw, .credits {
+            flex-basis: 100%;
+            margin-bottom: 1rem;
+        }
+        .hiw {
+            background-color: $color-highlight-white;
+        }
+        .credits {
+            background-color: $color-yellow;
+        }
+        h1 {
+            font-size: 1.2rem !important;
+        }
+    }
+}
