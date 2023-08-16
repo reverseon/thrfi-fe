@@ -71,7 +71,6 @@ const Go: React.FC = () : JSX.Element => {
         e.preventDefault()
         setFormState(FormState.SUBMITTING)
         let endpoint = process.env.REACT_APP_API_URL! + process.env.REACT_APP_UNLOCK_EP! + '/' + key
-        console.log(formData)
         let body = {
             password: formData.password
         }
